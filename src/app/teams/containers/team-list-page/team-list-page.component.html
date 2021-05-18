@@ -1,0 +1,24 @@
+<br>
+<br>
+<table class="table" >
+    <thead class="table table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Slogan</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let team of teams">
+      <tr>
+        <th scope="row">{{team.id}}</th>
+        <td>{{team.name}}</td>
+        <td>{{team.slogan}}</td>
+        <td><button type="button" class="btn btn-primary">Delete</button></td>
+        <td><button type="button" class="btn btn-warning"  routerLink="/teams-edit">Edit</button></td>
+
+      </tr>
+    </tbody>
+</table>
+
