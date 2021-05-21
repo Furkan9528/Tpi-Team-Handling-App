@@ -1,16 +1,16 @@
 <br>
 <br>
 <h2>{{title}}</h2>
-<form class="col-md-6">
-    <div class="form-group">
+<form class="col-md-6" #addForm="ngForm" (ngSubmit) = "addTeams(addForm)">
+    <div class="form-group" >
       <label>Team</label>
-      <input type="text" id="id" name="name" class="form-control" size="50px" placeholder="Fenerbahçe">
+      <input type="text" ngModel id="name" name="name" class="form-control" size="50px" placeholder="Fenerbahçe" required>
     </div>
     <br>
     <div class="form-group">
       <label>Slogan</label>
-      <input type="text" id="id" name="slogan" class="form-control" placeholder="Yaşa Fenerbahçe">
+      <input type="text" ngModel id="slogan" name="slogan" class="form-control" placeholder="Yaşa Fenerbahçe" required>
     </div>
     <br>
-    <button type="submit"  class="w-100 btn btn-primary">Submit</button>
-  </form>
+    <button [disabled]="addForm.invalid" id="addTeamForm" type="submit"  class="w-100 btn btn-primary">Envoyer</button>
+</form>

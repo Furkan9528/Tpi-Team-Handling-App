@@ -7,8 +7,9 @@ import { TeamListPageComponent } from './teams/containers/team-list-page/team-li
 const routes: Routes = [
   { path: '', redirectTo: 'teams', pathMatch: 'full'},
   { path: 'teams', component: TeamListPageComponent },
-  { path: 'teams-add', component: TeamAddPageComponent },
-  { path: 'teams-edit', component: TeamEditPageComponent },
+  { path: 'add', component: TeamAddPageComponent },
+  { path: 'update/:{id}', component: TeamEditPageComponent },
+  { path: 'teams/:{id}', component: TeamEditPageComponent }
 
   
 

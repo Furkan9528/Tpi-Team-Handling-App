@@ -1,5 +1,5 @@
-export interface Team {
-    id?: number;
+export class Team {
+    id: number;
     name: string;
     slogan: string;
   }
