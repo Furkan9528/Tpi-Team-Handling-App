@@ -34,8 +34,8 @@ export class TeamDetailPageComponent implements OnInit {
   }
 
 
-  redirectToTeamList():void{
-    this.router.navigate[`teams`];
+  redirectToTeamList(){
+    this.router.navigate([`teams`]);
   }
 
   
