@@ -21,10 +21,11 @@
         <th scope="row"></th>
         <td><input type="text" [(ngModel)]="team.id" name="id" class="form-control" ></td>
         <td><input type="text" [(ngModel)]="team.name" name="name" class="form-control" ></td>
-        <td><input type="text" [(ngModel)]="team.slogan" name="slogan" class="form-control" ></td>
-                       
+        <td><input type="text" [(ngModel)]="team.slogan" name="slogan" class="form-control" ></td>           
        </tr>
-    </tbody>
+    </tbody>   
+     <button (click)="redirectToTeamList()"  type="submit"  class="w-100 btn btn-primary">Envoyer</button>
+
 </table>
 
 
