@@ -1,18 +1,34 @@
+<br>
+<br>
+
+
+
+<br>
+<br>
 <table class="table" >
     <thead class="table table-dark">
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Slogan</th>
         <th scope="col"></th>
         <th scope="col"></th>
       </tr>
     </thead>
-    <tbody *ngFor="let team of teams">
+    <tbody >
       <tr>
-        <th scope="row">{{team.id}}</th>
-        <td>{{team.name}}</td>
-        <td>{{team.slogan}}</td>
-      </tr>
+        <th scope="row"></th>
+        <td><input type="text" [(ngModel)]="team.id" name="id" class="form-control" ></td>
+        <td><input type="text" [(ngModel)]="team.name" name="name" class="form-control" ></td>
+        <td><input type="text" [(ngModel)]="team.slogan" name="slogan" class="form-control" ></td>
+                       
+       </tr>
     </tbody>
 </table>
+
+
+
+
+
+

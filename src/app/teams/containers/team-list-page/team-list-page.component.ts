@@ -20,25 +20,34 @@ export class TeamListPageComponent implements OnInit {
   constructor(private teamService: TeamService, private router : Router){}
    
   ngOnInit(){
+    this.getTeams();
+  }
+
+  getTeams(){
     this.teamService.getTeams().subscribe(data=>{
       this.teams=data;
     })
   }
-
 
   redirectToTeamEdit(team: Team): void {
     localStorage.setItem("id",team.id.toString());
     this.router.navigate([`update/${team.id}`]);
   }
 
-  delete(team:Team){
-    this.teamService.deleteTeams(team)
+  delete(id:number):void{
+    this.teamService.deleteTeams(id)
     .subscribe(data=>{
-      this.teams=this.teams.filter(p=>p!==team);
-      alert("Silindi")
+      this.getTeams();
     })
 
   }
+
+  redirectToDetail(team: Team): void {
+    localStorage.setItem("id",team.id.toString());
+    this.router.navigate([`teams/${team.id}/detail`]);
+  }
+
+
   
 
 

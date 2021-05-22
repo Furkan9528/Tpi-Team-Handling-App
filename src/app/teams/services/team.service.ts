@@ -24,8 +24,8 @@ export class TeamService {
     return this.http.post<Team>(`${environment.backendPath}/add`,team);
   }
 
-  public deleteTeams(team: Team): Observable<void> {
-    return this.http.delete<void>(`${environment.backendPath}/`+team.id);
+  public deleteTeams(teamId:number){
+    return this.http.delete<void>(`${environment.backendPath}/teams/${teamId}`);
   }
   
   public updateTeams(team: Team): Observable<Team> {
@@ -33,9 +33,7 @@ export class TeamService {
   }
 
   public findById(id: number): Observable<Team> {
-    const options = {params: new HttpParams().set("id", String(id))};
-
-    return this.http.get<Team>(`${environment.backendPath}/`+id,options);  
+    return this.http.get<Team>(`${environment.backendPath}/`+id);  
   }  
 
 }

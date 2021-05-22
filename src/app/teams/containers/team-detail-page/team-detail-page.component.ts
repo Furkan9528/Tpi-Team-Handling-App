@@ -12,28 +12,33 @@ import { Observable } from 'rxjs';
 })
 export class TeamDetailPageComponent implements OnInit {
 
-   teams: Team[];
-
-   team$: Observable<Team> | null;
+  team :Team=new Team();
 
 
-  constructor(private teamService: TeamService, private router : Router,public route: ActivatedRoute) {
-}
+  constructor(private teamService: TeamService, private router : Router){}
 
-  ngOnInit(): void {
+  
+
+  ngOnInit() {
+    this.redirectToDetail();
 
   }
 
-  public getTeams(): void{
-    this.teamService.getTeams().subscribe(
-      (response: Team[])=>{
-        this.teams = response;
-      },
-      (error: HttpErrorResponse) =>{
-        alert(error.message);
-      }
-    );
+
+  redirectToDetail(){
+    let id=localStorage.getItem("id");
+    this.teamService.findById(+id).subscribe(
+      data=>{
+        this.team = data;
+      })
   }
+
+
+  redirectToTeamList():void{
+    this.router.navigate[`teams`];
+  }
+
+  
 
 
   
