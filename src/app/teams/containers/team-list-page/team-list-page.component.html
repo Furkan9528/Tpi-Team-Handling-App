@@ -15,7 +15,7 @@
         <th scope="row">{{team.id}}</th>
         <td>{{team.name}}</td>
         <td>{{team.slogan}}</td>
-        <td><button (click)="redirectToTeamDetail(team)" routerLink="/teams/{{team.id}}/detail" type="button" class="btn btn-danger" >Detail</button></td>
+        <td><button (click)="redirectToDetail(team)" routerLink="/teams/{{team.id}}/detail" type="button" class="btn btn-danger" >Detail</button></td>
         <td><button (click)="redirectToTeamEdit(team)" type="button"class="btn btn-warning" >Update</button></td>
         <td><button (click)="delete(team.id)" type="button" id="deleteTeams" class="btn btn-primary" >Delete</button></td>
       </tr>
